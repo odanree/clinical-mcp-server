@@ -79,6 +79,20 @@ A LangGraph agent in `agent/` (next session) will consume this transport directl
 
 ---
 
+## Known limitations
+
+### `get_drug_label` can silently return the wrong product
+
+> Tracked: [#1 — get_drug_label silently returns wrong product on combo-drug ambiguity](https://github.com/odanree/clinical-mcp-server/issues/1)
+
+The tool falls through `brand → generic → substance` and returns the first opening match. For ambiguous generic-name queries (e.g. `empagliflozin`) this can surface a **combination product** (Synjardy = empagliflozin + metformin) ahead of the monotherapy product (Jardiance = empagliflozin). The combo product's boxed warning belongs to the *other* active ingredient.
+
+**Workaround until #1 ships:** query by **brand name** when you can. `get_drug_label("Jardiance")` returns the correct monotherapy label; `get_drug_label("empagliflozin")` does not.
+
+This was caught the moment the server went live — the kind of failure the unit tests miss but evals against real public APIs catch. Fix is scoped for v0.2.
+
+---
+
 ## Tests
 
 ```bash
