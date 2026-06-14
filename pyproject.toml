@@ -9,7 +9,7 @@ description = "MCP server exposing clinical literature + drug-label search over 
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
-authors = [{ name = "Danh Le", email = "dtle82@gmail.com" }]
+authors = [{ name = "Danh Le", email = "nightseek@yahoo.com" }]
 keywords = [
     "mcp",
     "model-context-protocol",

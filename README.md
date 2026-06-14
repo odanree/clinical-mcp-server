@@ -28,7 +28,7 @@ pip install -e ".[dev]"
 {
   "mcpServers": {
     "clinical": {
-      "command": "C:\\Users\\Danh\\Documents\\Projects\\clinical-mcp-server\\.venv\\Scripts\\python.exe",
+      "command": "C:\\path\\to\\clinical-mcp-server\\.venv\\Scripts\\python.exe",
       "args": ["-m", "server.main"],
       "env": {
         "NCBI_API_KEY": "",

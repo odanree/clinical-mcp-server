@@ -35,7 +35,7 @@ openFDA defaults to a 240-request-per-minute limit which is fine for interactive
 {
   "mcpServers": {
     "clinical": {
-      "command": "C:\\Users\\Danh\\Documents\\Projects\\clinical-mcp-server\\.venv\\Scripts\\python.exe",
+      "command": "C:\\path\\to\\clinical-mcp-server\\.venv\\Scripts\\python.exe",
       "args": ["-m", "server.main"],
       "env": {
         "NCBI_API_KEY": "your-ncbi-key",
